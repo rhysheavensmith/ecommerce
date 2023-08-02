@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+}
+
+.navbar {
+  background-color: #f6f6f7;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 50px;
+  height: 30px;
+  margin-top: 12px;
+}
+
+.navbar p {
+  color: #888888;
+  font-family: "Inter", sans-serif;
+  font-family: "Karla", sans-serif;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+}
