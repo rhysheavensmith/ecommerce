@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .navbar {
   background-color: #f6f6f7;
   display: flex;
@@ -16,6 +20,10 @@ body {
   color: #888888;
   font-family: "Inter", sans-serif;
   font-family: "Karla", sans-serif;
+}
+
+.navbar p:hover {
+  cursor: pointer;
 }
 
 .card {

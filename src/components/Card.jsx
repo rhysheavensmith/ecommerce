@@ -24,7 +24,7 @@ export default function Card({ specs, updateCart }) {
   function addToCart() {
     // Make sure a size has been selected
     if (selectedSize === null) {
-      console.log("Please select a size");
+      alert("Please select a size");
       return;
     }
     // Create a new item with the product information and selected size
