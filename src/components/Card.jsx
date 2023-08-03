@@ -10,7 +10,7 @@ export default function Card({ specs, updateCart }) {
 
   // map over the sizes and return a button for each
   const sizes = specs.sizeOptions.map((size) => (
-    <button key={size.id} onClick={() => pickSize(size)}>
+    <button className="sizeBtn" key={size.id} onClick={() => pickSize(size)}>
       {size.label}
     </button>
   ));
@@ -36,16 +36,18 @@ export default function Card({ specs, updateCart }) {
   return (
     <div className="card">
       <img src={specs.imageURL} alt="classic tee" />
-      <div>
-        <h1>{specs.title}</h1>
+      <div className="product-details">
+        <h1 className="title">{specs.title}</h1>
         <hr />
-        <h2>{`$${specs.price}`}</h2>
+        <h2 className="price">{`$${specs.price.toFixed(2)}`}</h2>
         <hr />
-        <p>{specs.description}</p>
-        <h3>SIZE</h3>
+        <p className="description">{specs.description}</p>
+        <h3 className="sizeText">SIZE</h3>
         {sizes}
         <br />
-        <button onClick={addToCart}>ADD TO CART</button>
+        <button onClick={addToCart} className="addBtn">
+          ADD TO CART
+        </button>
       </div>
     </div>
   );

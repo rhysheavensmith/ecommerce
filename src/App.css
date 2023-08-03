@@ -1,5 +1,7 @@
 body {
   margin: 0;
+  font-family: "Inter", sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 button {
@@ -11,15 +13,15 @@ button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 50px;
+  padding: 0 200px;
   height: 30px;
   margin-top: 12px;
 }
 
 .navbar p {
   color: #888888;
-  font-family: "Inter", sans-serif;
-  font-family: "Karla", sans-serif;
+  font-size: 0.8em;
+  font-weight: 200;
 }
 
 .navbar p:hover {
@@ -29,4 +31,53 @@ button {
 .card {
   display: flex;
   justify-content: center;
+  margin-top: 40px;
+}
+
+.card img {
+  width: 400px;
+}
+
+.card hr {
+  border: 0;
+  border-top: 1px solid #f6f6f7;
+}
+
+.card .product-details {
+  max-width: 400px;
+  margin-left: 120px;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+
+.card .price {
+  margin: 0;
+  font-size: 1em;
+}
+
+.card p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #888888;
+}
+
+.card .sizeText {
+  font-size: 0.9em;
+  color: #888888;
+  font-weight: 300;
+}
+
+.card .sizeBtn {
+  background-color: white;
+  border: 1px solid #888888;
+  /* padding: 10px; */
+  color: #888888;
+  height: 40px;
+  width: 40px;
+  margin-right: 8px;
+  margin-bottom: 15px;
 }
