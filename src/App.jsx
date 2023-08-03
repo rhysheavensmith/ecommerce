@@ -7,8 +7,14 @@ import "./App.css";
 export default function App() {
   // Init state for the product and cart
   const [product, setProduct] = useState({});
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
   const [isCartOpen, setCartOpen] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   // Fetch the data from the API and set the state to the product object
   useEffect(() => {
@@ -62,15 +68,18 @@ export default function App() {
 
   return (
     <div className="app">
-      <Nav setCartOpen={setCartOpen} cart={cart} />
-      {isCartOpen && (
-        <Cart
-          cart={cart}
-          incrementCount={incrementCount}
-          decrementCount={decrementCount}
-          deleteItem={deleteItem}
-        />
-      )}
+      <div className="cart-container">
+        <Nav setCartOpen={setCartOpen} cart={cart} />
+        {isCartOpen && (
+          <Cart
+            cart={cart}
+            incrementCount={incrementCount}
+            decrementCount={decrementCount}
+            deleteItem={deleteItem}
+          />
+        )}
+      </div>
+
       <Card
         specs={product}
         key={product.id}

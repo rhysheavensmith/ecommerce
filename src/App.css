@@ -54,6 +54,10 @@ button {
   font-weight: 300;
 }
 
+.card .star {
+  color: #c90000;
+}
+
 .card .price {
   margin: 0;
   font-size: 1em;
@@ -73,11 +77,90 @@ button {
 
 .card .sizeBtn {
   background-color: white;
-  border: 1px solid #888888;
+  border: 1px solid #cccccc;
   /* padding: 10px; */
   color: #888888;
   height: 40px;
   width: 40px;
   margin-right: 8px;
   margin-bottom: 15px;
+}
+
+.card .addBtn {
+  border: 2px solid #222222;
+  background-color: white;
+  font-size: 0.9em;
+  padding: 10px 25px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.card .addBtn:hover {
+  background-color: #222222;
+  color: white;
+}
+
+.cart {
+  position: absolute;
+  right: 20px;
+  top: 40px;
+  width: 200px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.cart .empty-cart {
+  margin: 12px;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.cart .total {
+  margin-left: 13px;
+  font-size: 1em;
+  font-weight: 400;
+}
+
+.cart-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.cart-details img {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.cart-details h2 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.cart-details h3 {
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.item-controls {
+  text-align: center;
+}
+
+.item-controls button {
+  margin: 5px;
+  background-color: white;
+  border: 1px solid #cccccc;
+  /* padding: 10px; */
+  color: #888888;
+  height: 30px;
+  width: 30px;
+  margin-right: 8px;
+  margin-bottom: 15px;
+}
+
+.item-controls .delete {
+  color: #c90000;
 }

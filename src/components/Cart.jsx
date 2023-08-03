@@ -7,11 +7,6 @@ export default function Cart({
   decrementCount,
   deleteItem,
 }) {
-  // Render a message if the cart is empty
-  if (cart.length === 0) {
-    return <h2>Your cart is empty</h2>;
-  }
-
   // Calculate the total price of the items in the cart
   const totalPrice = cart.reduce((total, item) => {
     return total + item.price * item.count;
@@ -19,16 +14,22 @@ export default function Cart({
 
   return (
     <div className="cart">
-      {cart.map((item) => (
-        <CartItem
-          key={item.id}
-          item={item}
-          incrementCount={incrementCount}
-          decrementCount={decrementCount}
-          deleteItem={deleteItem}
-        />
-      ))}
-      <h2>{`Total: $${totalPrice.toFixed(2)}`}</h2>
+      {cart.length === 0 ? (
+        <div className="cart-item">
+          <h2 className="empty-cart">Your cart is empty</h2>
+        </div>
+      ) : (
+        cart.map((item) => (
+          <CartItem
+            key={item.id}
+            item={item}
+            incrementCount={incrementCount}
+            decrementCount={decrementCount}
+            deleteItem={deleteItem}
+          />
+        ))
+      )}
+      <h2 className="total">{`Total: $${totalPrice.toFixed(2)}`}</h2>
     </div>
   );
 }

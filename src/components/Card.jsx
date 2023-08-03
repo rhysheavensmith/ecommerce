@@ -42,7 +42,9 @@ export default function Card({ specs, updateCart }) {
         <h2 className="price">{`$${specs.price.toFixed(2)}`}</h2>
         <hr />
         <p className="description">{specs.description}</p>
-        <h3 className="sizeText">SIZE</h3>
+        <h3 className="sizeText">
+          SIZE<span className="star">*</span>
+        </h3>
         {sizes}
         <br />
         <button onClick={addToCart} className="addBtn">
