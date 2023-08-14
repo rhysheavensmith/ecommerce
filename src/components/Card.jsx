@@ -10,7 +10,11 @@ export default function Card({ specs, updateCart }) {
 
   // map over the sizes and return a button for each
   const sizes = specs.sizeOptions.map((size) => (
-    <button className="sizeBtn" key={size.id} onClick={() => pickSize(size)}>
+    <button
+      className={selectedSize === size ? "sizeBtnDark" : "sizeBtn"}
+      key={size.id}
+      onClick={() => pickSize(size)}
+    >
       {size.label}
     </button>
   ));
@@ -31,6 +35,8 @@ export default function Card({ specs, updateCart }) {
     const item = { ...specs, selectedSize: selectedSize };
     // Add the new item to the cart
     updateCart(item);
+    // Reset the selected size to unhighlight the button
+    setSelectedSize(null);
   }
 
   return (
